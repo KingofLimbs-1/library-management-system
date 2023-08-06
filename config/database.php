@@ -1,5 +1,6 @@
 <?php
 require_once( __DIR__ . '../../config.php');
+require_once(__DIR__ . "../../classes/librarian.php"); 
 ?>
 
 <?php
@@ -12,4 +13,8 @@ if ($conn->connect_error) {
 
 // Set the character set to handle special characters properly
 $conn->set_charset("utf8");
+
+// Librarian class instantiation
+$crudOperations = new crudOperations($conn);
+// ...
 ?>
