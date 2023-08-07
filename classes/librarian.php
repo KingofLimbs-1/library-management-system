@@ -51,22 +51,49 @@ class crudOperations
     }
     // ...
 
+    // Fetch book details
+    public function getBookDetails($bookId)
+    {
+        $sql = "SELECT * FROM books WHERE book_id = ?";
+        $result = $this->conn->prepare($sql);
+
+        if ($result) {
+            $result->bind_param('i', $bookId);
+            $result->execute();
+            $check = $result->get_result();
+
+            if ($check->num_rows > 0) {
+                return $check->fetch_assoc();
+            } else {
+                return null;
+            }
+        } else {
+            return null;
+        }
+    }
+    // ...
+
     // Edit book
-    public function editBook($title, $author, $isbn)
+    public function editBook($bookId, $title, $author, $isbn)
     {
         $sql = "UPDATE books SET title = ?, author = ?, isbn = ? WHERE book_id = ?";
         $result = $this->conn->prepare($sql);
-        $result->bind_param('sssi', $title, $author, $isbn);
 
-        $check = $result->execute();
+        if ($result) {
+            $result->bind_param('sssi', $title, $author, $isbn, $bookId);
+            $check = $result->execute();
 
-        if ($check) {
-            return true;
+            if ($check) {
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
     }
     // ...
+    
     // BOOK METHODS END
 
 
