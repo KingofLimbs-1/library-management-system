@@ -7,13 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Members</title>
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
     <link rel="stylesheet" href="../../assets/css/librarian/viewMembers.css">
 </head>
 
 <body>
-    <div>
-        <?php include '../../include/logo.php' ?>
-    </div>
     <div class="heading">
         <h1>Manage Members</h1>
     </div>
@@ -34,8 +32,8 @@
                         <td><?php echo $row["email"] ?></td>
                         <td>#</td>
                         <td class="actions">
-                            <button>View Member</button>
-                            <button>Blacklist</button>
+                            <button id="viewMember">View Member</button>
+                            <button id="blacklist">Blacklist</button>
                         </td>
                     </tr>
                 <?php endif; ?>
