@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $title = $bookDetails["title"];
         $author = $bookDetails["author"];
         $isbn = $bookDetails["isbn"];
-        // echo $title;
     }
 }
 
@@ -43,17 +42,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="labelContainer">
                 <label>Title</label>
             </div>
-            <input type="text" value="<?php echo $title; ?>">
+            <input type="hidden" name="bookId" value="<?php echo $bookId; ?>">
+            <input type="text" name="title" value="<?php echo $title; ?>">
 
             <div class="labelContainer">
                 <label>Author</label>
             </div>
-            <input type="text" value="<?php echo $author ?>">
+            <input type="text" name="author" value="<?php echo $author ?>">
 
             <div class="labelContainer">
                 <label>ISBN</label>
             </div>
-            <input type="text" value="<?php echo $isbn; ?>">
+            <input type="text" name="isbn" value="<?php echo $isbn; ?>">
 
             <div class="submitContainer">
                 <input type="submit" value="Save">
