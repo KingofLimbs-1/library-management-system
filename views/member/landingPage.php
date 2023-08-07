@@ -44,10 +44,10 @@
                 <div class="book">
                     <img src="<?php echo $row['img__path'] ?>" alt="Book cover">
                     <br>
-                    <?php echo $row['title']; ?>
+                    <span id="title"><?php echo $row['title']; ?></span>
                     <br>
-                    <?php echo $row['author']; ?>
-                    <div>
+                    <span id="author"><?php echo $row['author']; ?></span>
+                    <div class="button">
                         <button>Rent</button>
                     </div>
                 </div>
