@@ -7,16 +7,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Librarians</title>
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
     <link rel="stylesheet" href="../../assets/css/librarian/viewAdmin.css">
 </head>
 
 <body>
-    <div>
-        <?php include '../../include/logo.php' ?>
-    </div>
     <div class="heading">
         <h1>Manage Librarians</h1>
     </div>
+
+    <div class="addLibrarian">
+        <form action="../../include/addAdmin.php" method="post">
+
+            <h1>Add Librarian</h1>
+
+            <div class="labelContainer">
+                <label>Name</label>
+            </div>
+            <input type="text" name="name">
+
+            <div class="labelContainer">
+                <label>Email</label>
+            </div>
+            <input type="text" name="email">
+
+            <div class="labelContainer">
+                <label>Password</label>
+            </div>
+            <input type="password" name="password">
+
+            <div class="submitContainer">
+                <input type="submit" value="Add">
+            </div>
+
+        </form>
+    </div>
+
+
     <div class="tableContainer">
         <table>
             <tr class="headers">
@@ -32,8 +59,8 @@
                         <td><?php echo $row["email"] ?></td>
                         <td><?php echo $row["user_id"]; ?></td>
                         <td class="actions">
-                            <button>Edit</button>
-                            <button>Delete</button>
+                            <button id="edit">Edit</button>
+                            <button id="delete">Delete</button>
                         </td>
                     </tr>
                 <?php endif; ?>
