@@ -47,21 +47,16 @@
     <div class="tableContainer">
         <table>
             <tr class="headers">
+                <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>ID</th>
-                <th>Actions</th>
             </tr>
             <?php foreach ($rows as $row) : ?>
                 <?php if ($row["is_admin"] == 1) : ?>
                     <tr>
+                        <td><?php echo $row["user_id"]; ?></td>
                         <td><?php echo $row["name"] ?></td>
                         <td><?php echo $row["email"] ?></td>
-                        <td><?php echo $row["user_id"]; ?></td>
-                        <td class="actions">
-                            <button id="edit">Edit</button>
-                            <button id="delete">Delete</button>
-                        </td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
