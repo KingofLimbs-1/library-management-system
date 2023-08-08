@@ -1,4 +1,10 @@
+<?php session_start(); ?>
 <?php include  __DIR__ . '/../../include/displayBooks.php'; ?>
+<?php require_once __DIR__ . '/../../include/rentalCount.php'; ?>
+
+<?php if (isset($_SESSION["username"])) {
+    $username = $_SESSION["username"];
+} ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +18,29 @@
 </head>
 
 <body>
+    <nav class="navContainer">
+        <div class="left">
+            <span>
+                <?php $imageLink = '../../assets/images/icons/logoImage.png'; ?>
+                <?php include __DIR__ . '/../../assets/logo.php'; ?>
+            </span>
+        </div>
+
+        <div class="right">
+            <div class="signOut">
+                <?php if (isset($_SESSION["username"])) : ?>
+                    <a href="<?php echo '../../include/signOut.php' ?>">Sign Out</a>
+                <?php endif; ?>
+            </div>
+            
+            <div class="myAccountBtn">
+                <?php if (isset($username)) :  ?>
+                    <a href="./viewAccount.php"><?php echo $username; ?></a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </nav>
+
     <section class="dashContainer">
         <div class="hr">
             <span>Dashboard</span>
@@ -20,7 +49,7 @@
         <div class="dashboard">
             <div class="dashItem" id="rented">
                 <span id="text">Rented</span>
-                <span id="number">#</span>
+                <span id="number"><?php echo $rentalCount; ?></span>
             </div>
             <div class="dashItem" id="overdue">
                 <span id="text">Overdue</span>
@@ -33,7 +62,6 @@
     </section>
 
     <section class="library">
-        <img src="" alt="">
 
         <div class="heading">
             <h1>Browse Library</h1>
@@ -42,14 +70,17 @@
         <div class="libraryContainer">
             <?php foreach ($rows as $row) : ?>
                 <div class="book">
-                    <img src="<?php echo $row['img__path'] ?>" alt="Book cover">
+                    <img class="bookCover" src="<?php echo $row['img__path'] ?>" alt="Book cover">
                     <br>
                     <span id="title"><?php echo $row['title']; ?></span>
                     <br>
                     <span id="author"><?php echo $row['author']; ?></span>
-                    <div class="button">
-                        <button>Rent</button>
-                    </div>
+                    <form action="../../include/rentBook.php" method="post">
+                        <div class="button">
+                            <input type="hidden" name="bookId" value="<?php echo $row["book_id"]; ?>">
+                            <button type="submit" name="rentBtn">Rent</button>
+                        </div>
+                    </form>
                 </div>
             <?php endforeach; ?>
         </div>
