@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require_once "../config/database.php" ?>
 
 
@@ -21,9 +22,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
             if ($user["is_admin"] == 1) {
+                // Create a session variable for given user
+                $_SESSION["username"] = $user["name"];
+                // ...
                 header('location: ../views/librarian/landingPage.php');
                 exit();
             } else {
+                // Create a session variable for given user
+                $_SESSION["username"] = $user["name"];
+                // ...
                 header('location: ../views/member/landingPage.php');
                 exit();
             }
