@@ -12,6 +12,12 @@
 </head>
 
 <body>
+    <div class="logo">
+        <?php $logoLink = '../librarian/landingPage.php'; ?>
+        <?php $imageLink = '../../assets/images/icons/logoImage.png'; ?>
+        <?php include __DIR__ . '/../../assets/logo.php'; ?>
+    </div>
+
     <div class="heading">
         <h1>Manage Librarians</h1>
     </div>

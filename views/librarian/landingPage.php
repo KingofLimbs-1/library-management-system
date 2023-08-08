@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include __DIR__ . '/../../include/displayUsers.php'; ?>
 
 <!DOCTYPE html>
@@ -13,12 +14,16 @@
 
 <body>
     <div class="logo">
+        <?php $imageLink = '../../assets/images/icons/logoImage.png' ?>
+        <?php include __DIR__ . '/../../assets/logo.php'; ?>
     </div>
     <section class="dashboardSection">
 
         <div class="dashboardContainer">
             <div class="greeting">
-                <h1>Welcome, Librarian</h1>
+                <?php if (isset($_SESSION["username"])) : ?>
+                    <h1>Welcome, <?php echo $_SESSION["username"]; ?></h1>
+                <?php endif; ?>
             </div>
             <div class="buttons">
                 <a href="../librarian/viewMembers.php">

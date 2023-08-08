@@ -12,6 +12,12 @@
 </head>
 
 <body>
+    <div class="logo">
+        <?php $logoLink = '../librarian/landingPage.php'; ?>
+        <?php $imageLink = '../../assets/images/icons/logoImage.png'; ?>
+        <?php include __DIR__ . '/../../assets/logo.php'; ?>
+    </div>
+
     <div class="heading">
         <h1>Manage Members</h1>
     </div>
@@ -32,7 +38,12 @@
                         <td><?php echo $row["email"] ?></td>
                         <td>#</td>
                         <td class="actions">
-                            <button id="viewMember">View Member</button>
+
+                            <form action="#" method="post">
+                                <input type="hidden" name="viewUserID" value="<?php echo $row["user_id"]; ?>">
+                                <button type="submit" id="viewMember">View Member</button>
+                            </form>
+
                             <button id="blacklist">Blacklist</button>
                         </td>
                     </tr>
