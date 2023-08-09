@@ -2,7 +2,7 @@
 
 <?php
 // Query to fetch user data
-$sql = "SELECT * FROM books";
+$sql = "SELECT * FROM books WHERE book_id NOT IN (SELECT book_id FROM borrowings WHERE return_date IS NULL)";
 $result = $conn->query($sql);
 // ...
 
