@@ -207,3 +207,21 @@ require_once(__DIR__ . '/config.php');
 5. #### Test the Application:
 
 Start your application in the local server environment provided by XAMPP/MAMP. Access the application in your web browser and verify that it is connected to the local database.
+
+
+## Login Credentials
+
+#### These can be used to browse the site in either view...
+
+#### <ins>Librarian</ins>
+
+- Name: Cheryl Mason
+- Email: cheryl.mason@example.com
+- Password: Silent@789
+
+
+#### <ins>Member</ins>
+
+- Name: Harry Mason
+- Email: harry.mason@example.com
+- Password: SH_User@123
