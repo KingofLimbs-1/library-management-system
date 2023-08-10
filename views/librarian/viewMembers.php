@@ -36,12 +36,12 @@
                         <td><?php echo $row["user_id"]; ?></td>
                         <td><?php echo $row["name"] ?></td>
                         <td><?php echo $row["email"] ?></td>
-                        <td>#</td>
+                        <td><?php echo $row["rental_count"]; ?></td>
                         <td class="actions">
 
-                            <form action="#" method="post">
-                                <input type="hidden" name="viewUserID" value="<?php echo $row["user_id"]; ?>">
-                                <button type="submit" id="viewMember">View Member</button>
+                            <form action="./viewMember.php" method="post">
+                                <input type="hidden" name="userId" value="<?php echo $row["user_id"]; ?>">
+                                <button type="submit" id="viewMember" name="viewMember">View Member</button>
                             </form>
 
                             <button id="blacklist">Blacklist</button>
