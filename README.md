@@ -68,6 +68,7 @@ It provides an overview of the tables, relationships, and key components that st
 
 ## <u>Entity-Relationship Diagram (ERD)</u>
 
+![librarySchema](https://github.com/KingofLimbs-1/library-management-system/assets/99418553/a5babe67-0022-4ed9-89c9-bece65638c79)
 
 
 ## <u>Tables and Fields</u>
