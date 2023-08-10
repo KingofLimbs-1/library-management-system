@@ -28,6 +28,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Rented Books</th>
+                <th>Status</th>
                 <th>Actions</th>
             </tr>
             <?php foreach ($rows as $row) : ?>
@@ -37,6 +38,7 @@
                         <td><?php echo $row["name"] ?></td>
                         <td><?php echo $row["email"] ?></td>
                         <td><?php echo $row["rental_count"]; ?></td>
+                        <td><?php echo $row["status"]; ?></td>
                         <td class="actions">
 
                             <form action="./viewMember.php" method="post">
@@ -44,7 +46,10 @@
                                 <button type="submit" id="viewMember" name="viewMember">View Member</button>
                             </form>
 
-                            <button id="blacklist">Blacklist</button>
+                            <form action="../../include/blacklistUser.php" method="post">
+                                <input type="hidden" name="userId" value="<?php echo $row["user_id"]; ?>">
+                                <button type="submit" id="blacklist" name="blacklist">Blacklist</button>
+                            </form>
                         </td>
                     </tr>
                 <?php endif; ?>
