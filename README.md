@@ -2,11 +2,11 @@
 
 ## Overview
 
-### <u>Introduction</u>
+### <ins>Introduction</ins>
 
 Welcome to the documentation of this library management system. In this section, I will be outlining the the **goals**, **capabalities**, and **significance** of the project.
 
-### <u>Goals and Objectives</u>
+### <ins>Goals and Objectives</ins>
 
 This library management system aims to address these specific challenges and provide an efficient solution:
 
@@ -14,7 +14,7 @@ This library management system aims to address these specific challenges and pro
 
 - This system should assist librarians and members belonging to the library, in finding books online without having to physically be at the library.
 
-### <u>Capabilities</u>
+### <ins>Capabilities</ins>
 
 #### Librarian
 
@@ -48,7 +48,7 @@ This library management system aims to address these specific challenges and pro
 
 - All done within the member-specific view of the site.
 
-### <u>Benefits and Significance</u>
+### <ins>Benefits and Significance</ins>
 
 This library management system offers several benefits:
 
@@ -60,18 +60,18 @@ This library management system offers several benefits:
 
 ## Database Schema
 
-### <u>Introduction</u>
+### <ins>Introduction</ins>
 
 This section outlines the structure and organization of the database used in this library management system project.
 
 It provides an overview of the tables, relationships, and key components that store and manage the library's data.
 
-## <u>Entity-Relationship Diagram (ERD)</u>
+### <ins>Entity-Relationship Diagram (ERD)</ins>
 
 ![librarySchema](https://github.com/KingofLimbs-1/library-management-system/assets/99418553/a5babe67-0022-4ed9-89c9-bece65638c79)
 
 
-## <u>Tables and Fields</u>
+## <ins>Tables and Fields</ins>
 
 ### Users
 
@@ -143,7 +143,7 @@ Before setting up the database, ensure that you have the following installed:
 - XAMPP or MAMP for creating a local server environment.
 - Visual Studio Code for code editing.
 
-### <u>Steps to Set Up the Database</u>
+### <ins>Steps to Set Up the Database</ins>
 
 1. #### Clone the Repository:
 
