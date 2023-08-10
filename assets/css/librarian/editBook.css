@@ -10,18 +10,23 @@ body {
 }
 /* GENERAL STYLING END */
 
-/* ADD LIBRARIAN SECTION */
-.addLibrarian {
+/* CONTENT SECTION */
+.editBookContainer {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  margin-top: 80px;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   height: 310px;
   width: 500px;
   border-radius: 20px;
@@ -39,8 +44,8 @@ form h1 {
 .labelContainer {
   display: flex;
   justify-content: flex-end;
-  width: 40%;
-  height: 15px;
+  width: 65%;
+  height: 20px;
 }
 
 label {
@@ -50,18 +55,18 @@ label {
   font-family: "Inter Semi-Bold-italic";
 }
 
-input[type="text"], input[type=password] {
+input[type="text"] {
   all: unset;
   background: #fff;
   text-align: left;
   height: 30px;
-  width: 220px;
+  width: 320px;
 }
 
 .submitContainer {
   display: flex;
   justify-content: center;
-  margin-top: 8px;
+  margin-top: 15px;
   height: 25px;
   width: 80px;
   border: 2px solid #000;
@@ -75,59 +80,5 @@ input[type="submit"] {
   color: #fff;
   font-family: "Inter Semi-Bold-Italic";
   font-size: 15px;
-}
-/* ADD LIBRARIAN SECTION END */
-
-/* CONTENT SECTION */
-.heading {
-  font-family: "Inter Semi-Bold-Italic";
-  margin-top: 30px;
-  margin-left: 30px;
-  text-decoration: underline;
-}
-
-.tableContainer {
-  margin: 50px;
-}
-
-table {
-  display: flex;
-  justify-content: center;
-  border-collapse: collapse;
-  width: auto;
-}
-
-td,
-th {
-  padding: 15px;
-  border: 3px solid black;
-}
-
-tr {
-  text-align: center;
-}
-
-.actions {
-  padding: 20px;
-}
-
-button {
-  all: unset;
-  cursor: pointer;
-  width: 120px;
-  height: 30px;
-  margin: 5px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  font-weight: 400;
-  font-size: 15px;
-  color: #fff;
-}
-
-#edit {
-  background: #316abe;
-}
-
-#delete {
-  background: #ec3434;
 }
 /* CONTENT SECTION END */

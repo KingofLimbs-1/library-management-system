@@ -1,0 +1,61 @@
+/* GENERAL STYLING */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter Regular";
+}
+
+label {
+  font-size: 15px;
+  
+  text-align: left;
+}
+
+.heading {
+  font-size: 25px;
+}
+/* GENERAL STYLING END */
+
+/* FORMS SECTION */
+.formsContainer {
+  margin-top: 20vh;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.login,
+.signUp {
+  padding: 80px;
+  /* text-align: left; */
+  /* cursor: pointer; */
+}
+
+.login div,
+.signUp div {
+  margin: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  border: none;
+  border-bottom: solid 1px #000;
+  outline: none;
+  /* text-align: left; */
+}
+
+input[type="submit"] {
+  all: unset;
+  cursor: pointer;
+  border: solid 2px #000;
+  margin: 5px;
+  padding: 5px;
+  font-size: 20px;
+}
+/* FORMS SECTION END */

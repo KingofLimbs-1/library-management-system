@@ -1,0 +1,66 @@
+/* GENERAL STYLING */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter Medium";
+}
+/* GENERAL STYLING END */
+
+/* CONTENT SECTION */
+.heading {
+  font-family: "Inter Semi-Bold-Italic";
+  margin-top: 50px;
+  margin-left: 30px;
+  text-decoration: underline;
+}
+
+.tableContainer {
+  margin: 50px;
+}
+
+table {
+  display: flex;
+  justify-content: center;
+  border-collapse: collapse;
+  width: auto;
+}
+
+td,
+th {
+  padding: 15px;
+  border: 3px solid black;
+  font-weight: 200;
+}
+
+tr {
+  text-align: center;
+}
+
+.actions {
+  padding: 10px;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  width: 120px;
+  height: 32px;
+  margin: 5px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-weight: 400;
+  font-size: 15px;
+}
+
+#viewMember {
+  background: #6ceea0;
+}
+
+#blacklist {
+  background: #1e1e1e;
+  color: #fff;
+}
+/* CONTENT SECTION END */

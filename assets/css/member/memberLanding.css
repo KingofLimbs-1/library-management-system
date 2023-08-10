@@ -1,0 +1,149 @@
+/* GENERAL STYLING */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter Semi-Bold-Italic";
+  font-weight: 600;
+}
+/* GENERAL STYLING END */
+
+/* NAVBAR */
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  margin: 15px;
+}
+
+.signOut{
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.signOut a{
+  font-family: "Inter Regular";
+  font-weight: 100;
+}
+
+.myAccountBtn{
+  cursor: pointer;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.userIcon {
+  height: 30px;
+  width: 30px;
+}
+/* NAVBAR END */
+
+/* DASHBOARD SECTION */
+.dashContainer {
+  margin-top: 50px;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 60px;
+  margin: 20px;
+}
+
+.hr {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.hr span {
+  font-size: 20px;
+}
+
+hr {
+  border: 1px solid #000;
+}
+
+.dashItem {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  text-align: left;
+}
+
+.dashItem #text {
+  font-size: 20px;
+  margin-left: 2px;
+}
+
+.dashItem #number {
+  font-size: 60px;
+}
+
+#rented {
+  background-color: #6ceea0;
+}
+/* DASHBOARD SECTION END */
+
+/* LIBRARY SECTION */
+.heading {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+}
+
+.libraryContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 5px;
+}
+
+.book {
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.bookCover{
+  height: 250px;
+  width: auto;
+}
+
+#title {
+  font-weight: 600;
+}
+
+#author {
+  font-family: "Inter Regular";
+  font-weight: 100;
+}
+
+.button{
+  margin: 10px;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+}
