@@ -32,15 +32,15 @@
                 <th>Actions</th>
             </tr>
 
-            <?php while ($row = $result->fetch_assoc()) : ?>
+            <?php while ($row = $result2->fetch_assoc()) : ?>
                 <tr>
                     <td><?php echo $row["title"]; ?></td>
                     <td><?php echo date("Y-m-d", strtotime($row["due_date"])); ?></td>
                     <td>
                         <div class="actions">
-                            <form action="#" method="post">
-                                <input type="hidden">
-                                <button type="submit">Return</button>
+                            <form action="../../include/returnBook.php" method="post">
+                                <input type="hidden" name="borrowingId" value="<?php echo $row["borrowing_id"]; ?>">
+                                <button type="submit" name="returnBtn">Return</button>
                             </form>
                         </div>
                     </td>

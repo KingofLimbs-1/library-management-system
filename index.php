@@ -11,7 +11,8 @@
 
 <body>
     <div class="logo">
-
+        <?php $imageLink = './assets/images/icons/logoImage.png' ?>
+        <?php include __DIR__ . '../assets/logo.php'; ?>
     </div>
 
     <section class="formsContainer">

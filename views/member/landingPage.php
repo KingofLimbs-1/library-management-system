@@ -32,7 +32,7 @@
                     <a href="<?php echo '../../include/signOut.php' ?>">Sign Out</a>
                 <?php endif; ?>
             </div>
-            
+
             <div class="myAccountBtn">
                 <?php if (isset($username)) :  ?>
                     <a href="./viewAccount.php"><?php echo $username; ?></a>
@@ -53,7 +53,7 @@
             </div>
             <div class="dashItem" id="overdue">
                 <span id="text">Overdue</span>
-                <span id="number">#</span>
+                <span id="number">0</span>
             </div>
         </div>
         <div class="hr">

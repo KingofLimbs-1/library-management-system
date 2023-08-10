@@ -13,16 +13,25 @@
 </head>
 
 <body>
-    <div class="logo">
-        <?php $imageLink = '../../assets/images/icons/logoImage.png' ?>
-        <?php include __DIR__ . '/../../assets/logo.php'; ?>
-    </div>
+    <nav>
+        <div class="logo">
+            <?php $imageLink = '../../assets/images/icons/logoImage.png' ?>
+            <?php include __DIR__ . '/../../assets/logo.php'; ?>
+        </div>
+
+        <div class="signOut">
+            <?php if (isset($_SESSION["username"])) : ?>
+                <a href="<?php echo '../../include/signOut.php' ?>">Sign Out</a>
+            <?php endif; ?>
+        </div>
+    </nav>
+
     <section class="dashboardSection">
 
         <div class="dashboardContainer">
             <div class="greeting">
                 <?php if (isset($_SESSION["username"])) : ?>
-                    <h1>Welcome, <?php echo $_SESSION["username"]; ?></h1>
+                    <h1>Welcome, <?php echo $_SESSION["username"]; ?>.</h1>
                 <?php endif; ?>
             </div>
             <div class="buttons">
