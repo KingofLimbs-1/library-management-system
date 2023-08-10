@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php require_once "../config/database.php" ?>
+<?php require_once __DIR__ . "../../config/database.php"; ?>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -32,6 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Query to update books table to indicate a book has been rented
             $sql3 = "UPDATE books SET borrow_date = '$borrowDate' WHERE book_id = '$bookId'";
             $result3 = $conn->query($sql3);
+            // ...
+
+            // Query to increment rental_count in users table
+            $sql4 = "UPDATE users SET rental_count = rental_count + 1 WHERE user_id = $userId";
+            $result4 = $conn->query($sql4);
+            if (!$result4) {
+                $errors[] = "Failed to update rental count";
+            }
             // ...
 
             header('location: ../views/member/landingPage.php');
