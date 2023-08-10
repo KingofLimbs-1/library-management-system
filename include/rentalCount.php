@@ -4,18 +4,33 @@
 $username = $_SESSION["username"];
 
 if (isset($username)) {
-    // Query to fetch number of rentals signed-in user has
-    // "bo" & "u" are abbreviations for "borrowings" and "users" tables
-    $sql = "SELECT COUNT(*) AS rental_count FROM borrowings bo JOIN users u ON bo.user_id = u.user_id WHERE u.name = '$username'";
+    // Query to fetch user_id based on username
+    $sql = "SELECT user_id FROM users WHERE name = '$username'";
     $result = $conn->query($sql);
+    // ...
 
     if ($result && $result->num_rows > 0) {
-        $rowCount = $result->fetch_assoc();
+        $user = $result->fetch_assoc();
+        $userId = $user["user_id"];
 
-        $rentalCount = $rowCount["rental_count"];
-    } else {
-        $rentalCount = 0;
+
+        // Query to fetch number of active rentals for the user
+        $sql2 = "SELECT COUNT(*) AS rental_count FROM borrowings WHERE user_id = $userId AND return_date IS NULL";
+        $result2 = $conn->query($sql2);
+
+        if ($result2 && $result2->num_rows > 0) {
+            $rowRentalCount = $result2->fetch_assoc();
+            $rentalCount = $rowRentalCount["rental_count"];
+
+            // Query to update rental_count in users table
+            $sql3 = "UPDATE users SET rental_count = $rentalCount WHERE user_id = $userId";
+            $conn->query($sql3);
+            
+        } else {
+            // No active rentals, set to 0
+            $sql4 = "UPDATE users SET rental_count = 0 WHERE user_id = $userId";
+            $conn->query($sql4);
+        }
     }
-    // ...
 }
 ?>
